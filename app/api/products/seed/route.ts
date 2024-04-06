@@ -6,12 +6,27 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export const GET = async (request: NextRequest) => {
   const { users, products } = data
-  await dbConnect()
-  await UserModel.deleteMany()
-  await UserModel.insertMany(users)
+  try {
+    await dbConnect()
+  } catch (error) {
+    return NextResponse.json({
+      message: 'Database connection failed',
+      error,
+    })
+  }
 
-  await ProductModel.deleteMany()
-  await ProductModel.insertMany(products)
+  try {
+    await UserModel.deleteMany()
+    await UserModel.insertMany(users)
+
+    await ProductModel.deleteMany()
+    await ProductModel.insertMany(products)
+  } catch (error) {
+    return NextResponse.json({
+      message: 'Database operation failed',
+      error,
+    })
+  }
 
   return NextResponse.json({
     message: 'seeded successfully',
