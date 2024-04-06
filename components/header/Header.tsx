@@ -23,7 +23,7 @@ const Header = () => {
               </svg>
             </label>
             <Link href="/" className="btn btn-ghost text-lg">
-              E-Commerce V2
+              KALLE
             </Link>
           </div>
 
