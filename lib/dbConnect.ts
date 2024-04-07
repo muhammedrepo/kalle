@@ -8,7 +8,9 @@ import mongoose from 'mongoose'
 async function dbConnect() {
   try {
     // Attempt to establish a connection to the MongoDB database
-    await mongoose.connect(process.env.MONGODB_URI!)
+    await mongoose.connect(process.env.MONGODB_URI!, {
+      serverSelectionTimeoutMS: 60000,
+    }) // 60 seconds
   } catch (error) {
     // If the connection fails, throw an error
     throw new Error('Error connecting to database')
