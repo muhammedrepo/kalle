@@ -1,5 +1,6 @@
 'use client'
 import useCartService from '@/lib/hooks/useCartStore'
+import useLayoutService from '@/lib/hooks/useLayout'
 import { signIn, signOut, useSession } from 'next-auth/react'
 
 import Link from 'next/link'
@@ -19,6 +20,8 @@ const Menu = () => {
 
   const { data: session } = useSession()
 
+  const { theme, toggleTheme } = useLayoutService()
+
   const handleClick = () => {
     ;(document.activeElement as HTMLElement).blur()
   }
@@ -30,6 +33,14 @@ const Menu = () => {
           <i>
             {mounted && (
               <label className="swap swap-rotate">
+                {/* this hidden checkbox controls the state */}
+                <input
+                  type="checkbox"
+                  checked={theme === 'light'}
+                  onChange={toggleTheme}
+                />
+
+                {/* sun icon */}
                 <svg
                   className="swap-on fill-current w-10 h-10"
                   xmlns="http://www.w3.org/2000/svg"
@@ -80,6 +91,12 @@ const Menu = () => {
                   <ul
                     tabIndex={0}
                     className="menu dropdown-content z-[1] p-2 shadow bg-base-300 rounded-box w-52 ">
+                    {session.user.isAdmin && (
+                      <li onClick={handleClick}>
+                        <Link href="/admin/dashboard">Admin Dashboard</Link>
+                      </li>
+                    )}
+
                     <li onClick={handleClick}>
                       <Link href="/order-history">Order history </Link>
                     </li>
