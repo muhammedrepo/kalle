@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import Menu from './Menu'
-import SearchBox from './SearchBox'
+import { SearchBox } from './SearchBox'
 
 const Header = () => {
   return (
@@ -23,7 +23,7 @@ const Header = () => {
               </svg>
             </label>
             <Link href="/" className="btn btn-ghost text-lg">
-              KALLE
+              Kalle Commerce
             </Link>
           </div>
 

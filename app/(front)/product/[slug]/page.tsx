@@ -1,4 +1,5 @@
 import AddToCart from '@/components/products/AddToCart'
+import { Rating } from '@/components/products/Rating'
 import productService from '@/lib/services/productService'
 import { convertDocToObj } from '@/lib/utils'
 import Image from 'next/image'
@@ -51,7 +52,12 @@ export default async function ProductDetails({
             <li>
               <h1 className="text-xl">{product.name}</h1>
             </li>
-            <li>Rating</li>
+            <li>
+              <Rating
+                value={product.rating}
+                caption={`${product.numReviews} ratings`}
+              />
+            </li>
             <li> {product.brand}</li>
             <li>
               <div className="divider"></div>
