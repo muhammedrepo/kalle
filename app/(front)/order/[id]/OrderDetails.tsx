@@ -188,7 +188,7 @@ export default function OrderDetails({
                     </PayPalScriptProvider>
                   </li>
                 )}
-                {/* {session?.user.isAdmin && (
+                {session?.user.isAdmin && (
                   <li>
                     <button
                       className="btn w-full my-2"
@@ -200,7 +200,7 @@ export default function OrderDetails({
                       Mark as delivered
                     </button>
                   </li>
-                )} */}
+                )}
               </ul>
             </div>
           </div>
