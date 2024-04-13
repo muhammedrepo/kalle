@@ -6,7 +6,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: process.env.NEXT_PUBLIC_APP_NAME || 'Kalle Commerce',
+  title: process.env.NEXT_PUBLIC_APP_NAME || 'StyleSpark',
 }
 
 export default async function Home() {

@@ -22,8 +22,10 @@ const Header = () => {
                   d="M4 6h16M4 12h16M4 18h16"></path>
               </svg>
             </label>
-            <Link href="/" className="btn btn-ghost text-lg">
-              Kalle Commerce
+            <Link
+              href="/"
+              className="btn btn-ghost text-lg font-bold text-yellow-500">
+              StyleSpark
             </Link>
           </div>
 

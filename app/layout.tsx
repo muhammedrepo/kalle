@@ -9,9 +9,9 @@ import Sidebar from '@/components/Sidebar'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Kalle Commerce',
+  title: 'StyleSpark',
   description:
-    'Kalle Commerce is a full-stack e-commerce application built with Next.js, Tailwind CSS, and MongoDB.',
+    'StyleSpark e-Commerce is a full-stack e-commerce application built with Next.js, Tailwind CSS, and MongoDB.',
 }
 
 export default function RootLayout({
@@ -28,9 +28,9 @@ export default function RootLayout({
             <div className="drawer-content">
               <div className="min-h-screen flex flex-col">
                 <Header />
-                {children}
+                <div className="flex-grow">{children}</div>
                 <footer className="footer footer-center p-4 bg-base-300 text-base-content">
-                  <p>Copyright © 2024 - All right reserved by Kalle Commerce</p>
+                  <p>Copyright © 2024 - StyleSpark E-commerce website</p>
                 </footer>
               </div>
             </div>
